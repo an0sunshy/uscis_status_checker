@@ -31,7 +31,7 @@ def send_notification(telegram_bot_api, telegram_id, content):
             telegram_bot_api,
             'sendMessage',
             telegram_id,
-            content))
+            content), headers=HEADER)
     if r.status_code != 200:
         logging.error(
             'Message failed to be sent to chat {}'.format(telegram_id))
