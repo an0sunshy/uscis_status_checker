@@ -81,4 +81,6 @@ if __name__ == '__main__':
     if not telegram_id:
         logging.critical("No environment variable TELEGRAM_ID found!")
         sys.exit(1)
+    logging.info('Monitoring USCIS case: {}'.format(case_id))
+    logging.info('BOT_API: {}, CHAT: {}'.format(telegram_bot_api, telegram_id))
     check_periodically(case_id, telegram_bot_api, telegram_id)
